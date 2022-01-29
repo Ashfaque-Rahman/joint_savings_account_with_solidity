@@ -4,11 +4,18 @@
 
 ### Objective
 
-Automation of opening and maintaining joint accounts for any financial institute using solidity smart contract and Ehtereum Virtual Machine. The smart should be able to accept two user address to control the joint account's activity like deposit, withdrawal and balance check of the funds
+Automation of opening and maintaining joint accounts for any financial institute using solidity smart contract and Ethereum Virtual Machine. The smart contract should be able to accept two user addresses to control the joint account's activity like deposits, withdrawals and checking balance of the funds.
+
+### Smart Contract Features
+* `withdraw` 
+* `deposit` 
+* `contractBalance`:
+* Ensure the security of the contract 
+* Overdraft protection 
 
 ### Planning and Execution:
 
-* Complete and compile `JointSavings` smart contract.
+* Complete and compile `joint_savings.sol` smart contract.
 
 * Deploy the smart contract through JavaScript VM environment in Remix IDE
 
