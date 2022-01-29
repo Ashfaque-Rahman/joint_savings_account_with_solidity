@@ -14,58 +14,52 @@ Automation of opening and maintaining joint accounts for any financial institute
 
 * A folder named `Execution_Results` that contains the images deposit and withdrawal transactions which are designed to test the `JointSavings` functionality in the JavaScript VM
 
-### Step 1 (Successful Compilation):
+#### Step 1 (Successful Compilation):
 
 Using Pragma Compiler version ^0.5.0, created a [smart contract](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Final_Code/joint_savings.sol) that contains several functions like withdraw, deposit, balance check, wrong withdrawal address protection, overdraft protection etc. 
 
-![alt=“Successful Compilation”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/1.%20successful_compilation.JPG)
+![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/1.%20successful_compilation.JPG)
 
 
 
-#### Step 2: Compile and Deploy Your Contract in the JavaScript VM
+#### Step 2 (Successful Contract Deployment in JavaScript VM)
 
-1. Compile your smart contract. If an error occurs, review your code, and make the necessary changes for a successful compilation.
+In this stage we successfully deployed our smart contract using JavaScript VM environment in Remix IDE
 
-2. In the Remix IDE, navigate to the “Deploy & Run Transactions” pane, and then make sure that “JavaScript VM” is selected as the environment.
+![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/2.%20deployed_contract.JPG)
 
-3. Click the Deploy button to deploy your smart contract, and then confirm that it successfully deployed.
 
-#### Step 3: Interact with Your Deployed Smart Contract
+#### Step 3 (Testing & Validation of the Smart Contract)
 
-Now that your contract is deployed, it’s time to test its functionality! After each step, capture a screenshot of the execution, and then save it in a folder named `Execution_Results`. You’ll share this folder with your final submission.
-
-To interact with your deployed smart contract, complete the following steps:
-
-1. Use the `setAccounts` function to define the authorized Ethereum address that will be able to withdraw funds from your contract.
-
-     > **Note** You can either use the following Ethereum addresses or create new, dummy addresses on the [Vanity-ETH](https://vanity-eth.tk/) website, which includes an Ethereum vanity address generator.
+    1. We created two dummy address and set them to be the owner of the contract using `setAccounts` functions. These two addresses now can be used to deposit and withdraw funds from the contract.
     >
     > ```text
     > Dummy account1 address: 0x0c0669Cd5e60a6F4b8ce437E4a4A007093D368Cb
     > Dummy account2 address: 0x7A1f3dFAa0a4a19844B606CD6e91d693083B12c0
     > ```
 
-2. Test the deposit functionality of your smart contract by sending the following amounts of ether. After each transaction, use the `contractBalance` function to verify that the funds were added to your contract:
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/3.%20two_owners_account_setting.JPG)
 
-    * Transaction 1: Send 1 ether as wei.
+    2. We have made three consecutive deposit of 1 ETH, 10 ETH and 5 ETH to the contract address and the balance of the contract kept changing and showing final balance after each successful transaction. After the 3rd deposit of 5 ETH, contract balance is showing 16 ETH (balance shown in screenshot is in wei. 1 ETH = 10^18 wei) which seems to be correct proving `deposit` and `contractBalance` function is working correctly.
 
-    * Transaction 2: Send 10 ether as wei.
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/4.%20deposit_one_ether.JPG)
 
-    * Transaction 3: Send 5 ether.
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/5.%20deposit_ten_ether.JPG)
 
-    > **Note** Remembering how to convert ether to wei and vice versa can be challenging. So, you can use a website like [Ethereum Unit Converter](https://eth-converter.com/) to ease doing the conversion.
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/6.%20deposit_five_ether.JPG)
 
-3. Once you’ve successfully deposited funds into your contract, test the contract’s withdrawal functionality by withdrawing 5 ether into `accountOne` and 10 ether into `accountTwo`. After each transaction, use the `contractBalance` function to verify that the funds were withdrawn from your contract. Also, use the `lastToWithdraw` and `lastWithdrawAmount` functions to verify that the address and amount were correct.
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/7.%20checking_before_withdraw.JPG)
 
----
+    3. In this stage we are now testing the withdrawal function. We have made two withdrawal request to `accountOne` & `accountTwo` of 5 ETH and 10 ETH respectively. From the screenshot below we can see that after each succesful withdrawal, the `contractBalance` is showing correct result. Also the `lastToWithdraw` tab is showing correctly last withdrawal address and the `lastWithdrawAmount` tab is showing exactly the amount of last withdrawal. After last withdrawal `contracBalance` is showing balance of 1 ETH which is correct.
 
-### Submission
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/8.%20withdrawn_five_ether_to_accountOne.JPG)
 
-* Upload the files for this assignment to your GitHub repository.
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/9.%20withdrawn_ten_ether_to_accountTwo.JPG)
 
-* Submit the link to your GitHub repo on Bootcamp Spot.
+    4. To test the security of the smart contract, in this stage we tried to withdraw to an address (`0x3b607285E51d85061dB990852B106Da1f6415f40`) which is not set to be the owner. As per contract logic (we used `require` function to implement this), the transaction did not go through despite of having sufficent balance.
 
----
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/10.%20failed_withdrawal_wrong_owner.JPG)
+    
+    5. We also tried to withdraw more amount than the available balance of the smart contract. Despite of having the correct `accountOne` address, the transaction did not go through as per contract logic (`require` function)
 
-© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
-
+    ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/11.%20failed_withdrawal_insufficient_fund.JPG)
