@@ -1,6 +1,6 @@
-# Unit 20 - "Joint Savings Account"
+# "Joint Savings Account With Solidity"
 
-![alt=“”](Images/20-5-challenge-image.png)
+![alt=“”](Execution_Results/savings_account.jpeg)
 
 ### Background
 
