@@ -1,4 +1,4 @@
-# "Joint Savings Account With Solidity"
+# Joint Savings Account With Solidity
 
 ![alt=“”](Execution_Results/savings_account.jpeg)
 
