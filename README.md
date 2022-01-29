@@ -18,7 +18,7 @@ Automation of opening and maintaining joint accounts for any financial institute
 
 Using Pragma Compiler version ^0.5.0, created a [smart contract](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Final_Code/joint_savings.sol) that contains several functions like withdraw, deposit, balance check, wrong withdrawal address protection, overdraft protection etc. 
 
-![alt=“Successful Compilation”](Execution_Results/1. successful_compilation.JPG)
+![alt=“Successful Compilation”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/1.%20successful_compilation.JPG)
 
 
 
