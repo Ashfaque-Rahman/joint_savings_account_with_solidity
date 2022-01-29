@@ -32,11 +32,11 @@ In this stage we successfully deployed our smart contract using JavaScript VM en
 #### Step 3 (Testing & Validation of the Smart Contract)
 
     1. We created two dummy address and set them to be the owner of the contract using `setAccounts` functions. These two addresses now can be used to deposit and withdraw funds from the contract.
-    >
-    > ```text
-    > Dummy account1 address: 0x0c0669Cd5e60a6F4b8ce437E4a4A007093D368Cb
-    > Dummy account2 address: 0x7A1f3dFAa0a4a19844B606CD6e91d693083B12c0
-    > ```
+        >
+        > ```text
+        > Dummy account1 address: 0x0c0669Cd5e60a6F4b8ce437E4a4A007093D368Cb
+        > Dummy account2 address: 0x7A1f3dFAa0a4a19844B606CD6e91d693083B12c0
+        > ```
 
     ![alt=“”](https://github.com/Ashfaque-Rahman/joint_savings_account_with_solidity/blob/main/Execution_Results/3.%20two_owners_account_setting.JPG)
 
